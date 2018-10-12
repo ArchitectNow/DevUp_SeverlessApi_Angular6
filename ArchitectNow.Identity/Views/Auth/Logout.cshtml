@@ -1,0 +1,37 @@
+﻿@model ArchitectNow.Identity.Models.LogoutViewModel
+@{
+    ViewData["Title"] = "Sign out of Amraps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles
+    {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/login.css" />
+    </environment>
+}
+<div class="cover logout-cover"></div>
+<div class="container">
+    <div class="row justify-content-md-center align-content-center">
+        <div class="col-md-4">
+            <div class="login-container">
+                <form asp-action="Logout">
+                    <input type="hidden" name="logoutId" value="@Model.LogoutId" />
+                    <div class="card login-box">
+                        <div class="card-body login-title">
+                            <h1 class="card-title">Amraps</h1>
+                            <div>Sign Out</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <p class="col-12">Would you like to Sign Out of Amraps?</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <button type="submit" class="btn btn-success w-100 text-uppercase" style="cursor: pointer">SIgn Out</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

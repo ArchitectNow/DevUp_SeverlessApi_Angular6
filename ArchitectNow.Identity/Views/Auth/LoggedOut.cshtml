@@ -1,0 +1,55 @@
+﻿@model ArchitectNow.Identity.Models.LoggedOutViewModel
+
+@{
+    // Set this so the layout rendering sees an anonymous user
+    ViewData["signed-out"] = true;
+    ViewData["Title"] = "Signed out of Amraps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles
+    {
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/login.css" />
+    </environment>
+}
+<div class="cover logged-out-cover"></div>
+<div class="container">
+    <div class="row justify-content-md-center align-content-center">
+        <div class="col-md-4">
+            <div class="login-container">
+                <div class="card login-box">
+                    <div class="card-body login-title">
+                        <h1 class="card-title"><img src="~/images/amrap-logo.png" style="height: 40px !important; width: auto" /> Amraps</h1>
+                        <div>Ultimate Athlete System</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <p class="col-12">
+                                You are now signed out of Amraps 
+                            </p>
+                            <p class="col-12">You will be automatically redirected in: <span id="time">00:00</span></p>
+                        </div>
+                    </div>
+                    @if (Model.PostLogoutRedirectUri != null)
+                    {
+                        <div class="card-body">
+                            <a class="PostLogoutRedirectUri btn btn-danger w-100" href="@Model.PostLogoutRedirectUri">Continue</a>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+   <script src="~/js/signout-redirect.js"></script>
+}
+
+
+
+
+

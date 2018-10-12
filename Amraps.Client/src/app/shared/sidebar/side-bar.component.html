@@ -1,0 +1,141 @@
+﻿<div class="logo">
+    <div class="logo-normal">
+        <a [routerLink]="['/app/wods/todays-wod']" class="simple-text ">
+            <b>Amraps</b>
+        </a>
+    </div>
+    <div class="logo-img">
+      <img src="../../../assets/img/amrap-logo.png" />
+    </div>
+</div>
+<div class="sidebar-wrapper">
+    <div class="user">
+        <div class="photo">
+          <img src="../../../assets/img/avatar.jpg"/>
+        </div>
+        <div class="info">
+            <a data-toggle="collapse" href="#collapseExample" class="collapsed d-flex flex-row justify-content-between">
+                <div>{{displayName}}</div>
+                <div><b class="fa fa-cog"></b></div>
+            </a>
+            <div class="collapse" id="collapseExample">
+                <ul class="nav">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="sidebar-mini">MP</span>
+                            <span class="sidebar-normal">My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="sidebar-mini">EP</span>
+                            <span class="sidebar-normal">Edit Profile</span>
+                        </a>
+                    </li>
+                  <li>
+                    <a (click)="confirmSignOut()"><i class="material-icons">exit_to_app</i> Sign Out</a>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isNotMobileMenu()">
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group form-search is-empty">
+                <input class="form-control" placeholder="Search" type="text">
+                <span class="material-input"></span>
+                <span class="material-input"></span>
+            </div>
+            <button class="btn btn-white btn-round btn-just-icon" type="submit">
+                <i class="material-icons">search</i>
+                <div class="ripple-container"></div>
+            </button>
+        </form>
+        <ul class="nav nav-mobile-menu">
+            <li class="">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#pablo" aria-expanded="false">
+                    <i class="material-icons">dashboard</i>
+                    <p class="hidden-lg hidden-md">Dashboard</p>
+                    <div class="ripple-container"></div>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <i class="material-icons">notifications</i>
+                    <span class="notification">5</span>
+                    <p class="hidden-lg hidden-md">
+                        Notifications
+                        <b class="caret"></b>
+                    </p>
+                    <div class="ripple-container"></div>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">Mike John responded to your email</a>
+                    </li>
+                    <li>
+                        <a href="#">You have 5 new tasks</a>
+                    </li>
+                    <li>
+                        <a href="#">You're now friend with Andrew</a>
+                    </li>
+                    <li>
+                        <a href="#">Another Notification</a>
+                    </li>
+                    <li>
+                        <a href="#">Another One</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#pablo" aria-expanded="false">
+                    <i class="material-icons">person</i>
+                    <p class="hidden-lg hidden-md">Profile</p>
+                    <div class="ripple-container"></div>
+                </a>
+            </li>
+            <li class="separator hidden-lg hidden-md"></li>
+        </ul>
+    </div>
+    <div class="nav-container">
+        <ul class="nav">
+            <li routerLinkActive="active" *ngFor="let menuitem of menuItems">
+              <ng-container *authorize="menuitem.authorize">
+                <!--If is a single link-->
+                <a [routerLink]="[menuitem.path]" *ngIf="!menuitem.children || menuitem.children.length === 0">
+                  <i class="material-icons">{{menuitem.iconType}}</i>
+                  <p>{{menuitem.title}}</p>
+                </a>
+                <!--If it has a submenu-->
+                <a data-toggle="collapse" href="#{{menuitem.title}}" *ngIf="menuitem.children && menuitem.children.length > 0">
+                  <i class="material-icons">{{menuitem.iconType}}</i>
+                  <p>{{menuitem.title}}<b class="caret"></b></p>
+                </a>
+
+                <!--Display the submenu items-->
+                <div id="{{menuitem.title}}" class="collapse" *ngIf="menuitem.children && menuitem.children.length > 0">
+                  <ul class="nav">
+                    <li routerLinkActive="active" *ngFor="let childItem of visibleItems(menuitem.children)">
+                      <a [routerLink]="[menuitem.path, childItem.path]">
+                        <span class="sidebar-mini">&nbsp;</span>
+                        <span class="sidebar-normal">{{childItem.title}}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </ng-container>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="footer-logo">
+    <div class="logo-normal">
+        <a [routerLink]="['/']" class="simple-text">
+            Amraps
+        </a>
+    </div>
+    <div class="logo-img">
+
+    </div>
+</div>
+<app-footer></app-footer>

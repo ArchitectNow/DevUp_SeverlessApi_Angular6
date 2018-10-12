@@ -1,0 +1,35 @@
+
+
+
+
+
+
+
+
+<div class="main-content" *authorize="['wods', 'wods.readonly']">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h2>Wods</h2>
+        <table class="table table-sm table-hover">
+          <thead>
+          <tr>
+            <th>Date</th>
+            <th>Wod Name</th>
+            <th>Program</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let w of wods">
+            <td>{{w.wodDate.format('MM-DD-YYYY')}}</td>
+            <td>
+              <a href="javascript:void(0)" class="mr-2"><i class="fa fa-desktop"></i></a>
+              <a [routerLink]="['/app/wods/details', w.id]">{{w.name}}</a></td>
+            <td>{{w.program}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

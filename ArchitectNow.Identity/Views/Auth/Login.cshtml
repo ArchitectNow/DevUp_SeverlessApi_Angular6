@@ -1,0 +1,51 @@
+﻿@using ArchitectNow.Identity.Models
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Sign in to Amraps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles
+{
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/login.css" />
+    </environment>
+}
+<div class="cover login-cover"></div>
+<div class="container">
+    <div class="row justify-content-md-center align-content-center">
+        <div class="col-md-4">
+            <div class="login-container">
+                <form asp-controller="Auth" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                    <div class="card login-box">
+                        <div class="card-body login-title">
+                            <h1 class="card-title">
+                                <img src="~/images/amrap-logo.png" style="height: 40px !important; width: auto" />
+                                Amraps
+                            </h1>
+                            <div>Ultimate Athlete System</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="form-control-label" for="UserName">Username</label>
+                                    <input asp-for="UserName" class="form-control" placeholder="Username or Email" />
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="form-control-label" for="Password">Password</label>
+                                    <input asp-for="Password" class="form-control" placeholder="Password" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <button type="submit" class="btn btn-danger w-100 text-uppercase" style="cursor: pointer">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

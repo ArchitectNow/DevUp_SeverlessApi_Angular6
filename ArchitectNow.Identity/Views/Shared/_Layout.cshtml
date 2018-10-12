@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico?t=djkdld"> 
+    <title>@ViewData["Title"] | Amraps</title>
+
+    <environment names="Development">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:300,400" rel="stylesheet">
+        <link rel="stylesheet" href="~/css/bootstrap.css"/>
+        <link rel="stylesheet" href="~/css/site.css"/>
+    </environment>
+    <environment names="Staging,Production">
+       
+    </environment>
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    @RenderBody()
+    <environment names="Development">
+        <script src="~/js/jquery.js"></script>
+        <script src="~/js/popper.js"></script>
+        <script src="~/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

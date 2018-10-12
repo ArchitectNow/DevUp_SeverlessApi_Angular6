@@ -1,0 +1,26 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12" *ngIf="wod">
+        <h2 class="text-danger">Today's Workout: {{wod.name}}</h2>
+        <div *ngFor="let section of wod.sections">
+          <h5 class="text-danger">{{section.prefix}} {{section.displayName}}</h5>
+          <div class="ml-2" [innerHtml]="section.details"></div>
+          <div class="ml-2">{{section.repScheme}}</div>
+        </div>
+      </div>
+      <div class="col-md-12" *ngIf="!wod && loading">
+        <h2 class="text-danger">Today's Workout:</h2>
+        Loading workout...
+      </div>
+      <div class="col-md-12" *ngIf="!wod && error">
+        <h2 class="text-danger">Today's Workout:</h2>
+        Error loading workout...
+      </div>
+      <div class="col-md-12" *ngIf="!wod && !loading">
+        <h2 class="text-danger">Today's Workout:</h2>
+          No Wod For Today...
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<mat-form-field class="w-100">
+  <mat-placeholder>
+    {{controlLabel}} <span *ngIf="required" class="text-danger">*</span>
+  </mat-placeholder>
+  <input #control [id]="id" [type]="inputType" matInput [disabled]="disabled" [(value)]="value"
+         (focus)="focusInput()" (blur)="changed($event, input.value)" />
+  <mat-error *ngIf="formControl.hasError('required')">
+    {{controlLabel}} is required
+  </mat-error>
+  <mat-error *ngIf="formControl.hasError('maxLength')">
+    {{controlLabel}} is too long. Max length {{maxLength}}
+  </mat-error>
+</mat-form-field>

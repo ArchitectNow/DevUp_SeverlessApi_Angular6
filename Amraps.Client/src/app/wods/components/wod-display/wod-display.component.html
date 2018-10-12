@@ -1,0 +1,5 @@
+<div *ngFor="let section of wod.sections">
+  <h5 class="text-danger">{{section.prefix}} {{section.displayName}}</h5>
+  <div class="ml-2" [innerHtml]="section.details"></div>
+  <div class="ml-2">{{section.repScheme}}</div>
+</div>

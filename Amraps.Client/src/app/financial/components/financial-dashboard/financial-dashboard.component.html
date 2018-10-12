@@ -1,0 +1,13 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h2>Financial</h2>
+        <div *ngFor="let d of financials">{{d}}</div>
+        <h4 class="text-danger" *ngIf="error">
+          <i class="fa fa-warning mr-2"></i>{{error}}
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>

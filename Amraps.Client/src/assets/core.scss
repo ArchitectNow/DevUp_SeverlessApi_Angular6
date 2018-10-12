@@ -1,0 +1,81 @@
+@import "material-dashboard/variables";
+@import "material-dashboard/colors";
+@import "material-overrides";
+
+body{
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+.side-nav {
+  width: 260px;
+}
+
+.main-content {
+  background-color: $grey-100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0 0 !important;
+}
+
+.user{
+  padding-bottom: 20px;
+  margin:20px auto 0;
+  position: relative;
+
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    height: 1px;
+    width: calc(100% - 30px);
+    background-color: rgba(180,180,180, .3);
+  }
+
+  .photo{
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    left: 23px;
+    z-index: 5;
+
+
+    img{
+      width: 100%;
+    }
+  }
+
+  a{
+    color: $black-color;
+    padding: $padding-base-vertical $padding-large-vertical;
+    display: block;
+    white-space: nowrap;
+
+  }
+
+  .info{
+    .caret{
+      position: absolute;
+      top: 16px;
+      right: 26px;
+    }
+
+    > a{
+      padding-left: 70px;
+    }
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+
+

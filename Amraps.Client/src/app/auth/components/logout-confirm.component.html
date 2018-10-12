@@ -1,0 +1,25 @@
+<div class="cover logout-cover"></div>
+<div class="container">
+  <div class="row justify-content-md-center align-content-center">
+    <div class="col-md-4">
+      <div class="login-container">
+          <input type="hidden" name="logoutId" />
+          <div class="card login-box">
+            <div class="card-body login-title">
+              <h3 class="card-title"><img src="../../../assets/img/amrap-logo.png" style="height: 40px !important; width: auto !important;" /> Amraps</h3>
+              <div>Sign Out</div>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <p class="col-12">Would you like to Sign Out of Amraps?</p>
+              </div>
+            </div>
+            <div class="card-body">
+              <button type="reset" class="btn btn-default w-100 text-uppercase mb-2" style="cursor: pointer" (click)="goBack()">Go Back</button>
+              <button type="submit" class="btn btn-danger w-100 text-uppercase" style="cursor: pointer" (click)="signOut()">Sign Out</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

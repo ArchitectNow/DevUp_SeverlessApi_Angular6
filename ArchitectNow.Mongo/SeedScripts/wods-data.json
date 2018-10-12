@@ -1,0 +1,49 @@
+{
+  "_id" : "5ba8f9916396e3047f17c89e",
+  "LocationId" : "5ba8f9906396e3047f17c89c",
+  "ProgramId" : "5ba8f9906396e3047f17c89d",
+  "Program" : "CrossFit",
+  "Name" : "9/24/18",
+  "WodDate" : "2018-09-24T09:49:52.941888-05:00",
+  "PublishOnDateTime" : "2018-09-24T09:49:52.941948-05:00",
+  "Sections" : [
+    {
+      "Prefix" : "A)",
+      "DisplayName" : "Shoulder Press",
+      "ComponentId" : "5ba8f9906396e3047f17c899",
+      "RepScheme" : "4 x 5 @ 70%",
+      "Details" : "1 x 5 @ 50%\r\n1 x 5 @ 60%",
+      "MeasureType" : 8,
+      "Measure" : {
+        "UnitType" : "lbs",
+        "Rounds" : 4,
+        "Reps" : 5
+      }
+    },
+    {
+      "Prefix" : "B)",
+      "DisplayName" : "1-arm DB High Pull",
+      "ComponentId" : "5ba8f9906396e3047f17c89a",
+      "RepScheme" : "3 x 8-12 reps / arm",
+      "Details" : null,
+      "MeasureType" : 8,
+      "Measure" : {
+        "UnitType" : "lbs",
+        "Rounds" : 3,
+        "Reps" : -1
+      }
+    },
+    {
+      "Prefix" : "C)",
+      "DisplayName" : "Metcon",
+      "ComponentId" : "5ba8f9906396e3047f17c89b",
+      "RepScheme" : null,
+      "Details" : "4 x 2-Minute Rounds (2-Minute Rest):\r\n15 Push-Press (95/65)\r\nMax C2B Pull Ups\r\n\r\n** Score is total C2B completed.",
+      "MeasureType" : 3,
+      "Measure" : {
+        "Rx+" : false
+      }
+    }
+  ],
+  "Notes" : "Work hard"
+}
