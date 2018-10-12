@@ -1,1 +1,1 @@
-# DevUp_SeverlessApi_Angular6
+# DevUp 2018 Severless Apis Angular6
